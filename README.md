@@ -30,5 +30,5 @@ Certifique-se de ter um ambiente de servidor web (como XAMPP, WAMP, MAMP ou Dock
 1.  Coloque a pasta \`crud_mundo\` no diretório raiz do seu servidor web (ex: \`htdocs\` ou \`www\`).
 2.  Acesse a aplicação pelo seu navegador: \`http://localhost/crud_mundo/frontend/index.html\` (ou o caminho correspondente).
 
----
+----
 *Este projeto foi desenvolvido como parte de um exercício prático de desenvolvimento web.*
