@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Mundo - Estatísticas Globais</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="estatisticas-page">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-globe"></i> CRUD MUNDO
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-flag"></i> Países</a></li>
+                <li class="nav-item"><a href="cidades.html" class="nav-link"><i class="fas fa-city"></i> Cidades</a></li>
+                <li class="nav-item"><a href="estatisticas.html" class="nav-link"><i class="fas fa-chart-bar"></i> Estatísticas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="container">
+        <!-- HEADER -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1><i class="fas fa-chart-bar"></i> Estatísticas Globais</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem;">Análise completa dos dados cadastrados no sistema</p>
+        </div>
+
+        <!-- GRID DE ESTATÍSTICAS -->
+        <div class="card-grid">
+            <!-- Estatística 1: Total de Países -->
+            <div class="card fade-in" style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">
+                    <i class="fas fa-globe" style="background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                </div>
+                <h3 id="total-paises">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Países Cadastrados</p>
+            </div>
+
+            <!-- Estatística 2: Total de Cidades -->
+            <div class="card fade-in" style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">
+                    <i class="fas fa-city" style="background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                </div>
+                <h3 id="total-cidades">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Cidades Cadastradas</p>
+            </div>
+
+            <!-- Estatística 3: População Total -->
+            <div class="card fade-in" style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">
+                    <i class="fas fa-users" style="color: var(--earth-green);"></i>
+                </div>
+                <h3 id="populacao-total">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">População Total</p>
+            </div>
+
+            <!-- Estatística 4: Continentes -->
+            <div class="card fade-in" style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">
+                    <i class="fas fa-map" style="color: var(--earth-orange);"></i>
+                </div>
+                <h3 id="total-continentes">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Continentes Representados</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- SEÇÃO DE ANÁLISES DETALHADAS -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+            <!-- Análise 1: Cidade mais populosa por país -->
+            <div class="card fade-in" id="cidade-mais-populosa">
+                <div class="card-header">
+                    <h2 style="margin-bottom: 0;">
+                        <i class="fas fa-crown"></i> Cidades Mais Populosas
+                    </h2>
+                </div>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <!-- Conteúdo será carregado via JavaScript -->
+                    <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Carregando dados...</p>
+                </div>
+            </div>
+
+            <!-- Análise 2: Total de cidades cadastradas por continente -->
+            <div class="card fade-in" id="cidades-por-continente">
+                <div class="card-header">
+                    <h2 style="margin-bottom: 0;">
+                        <i class="fas fa-chart-pie"></i> Cidades por Continente
+                    </h2>
+                </div>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    <!-- Conteúdo será carregado via JavaScript -->
+                    <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Carregando dados...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO ADICIONAL: Países por Continente -->
+        <div class="card fade-in" style="margin-top: 2rem;">
+            <div class="card-header">
+                <h2 style="margin-bottom: 0;">
+                    <i class="fas fa-globe-americas"></i> Distribuição de Países por Continente
+                </h2>
+            </div>
+            <div id="paises-por-continente" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <!-- Conteúdo será carregado via JavaScript -->
+                <p style="text-align: center; color: var(--text-muted); grid-column: 1/-1; padding: 2rem;">Carregando dados...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/script.js"></script>
+    <script>
+        // Carrega as estatísticas ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarEstatisticas();
+        });
+    </script>
+</body>
+</html>
